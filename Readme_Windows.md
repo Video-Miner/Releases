@@ -59,4 +59,6 @@ https://discord.gg/bmtfrh9Vx6
 
 #  UPDATING TO A NEW RELEASE         
 
-To update to a new release, run VideoMiner.msi and select uninstall. Once uninstalled, run VideoMiner.msi once more and reinstall Video Miner. This will download the newest release. 
+1. Click the ```Stop Video Miner Pool``` shortcut in the start menu.
+
+2. Run VideoMiner.msi as Admin and install Video Miner. This will download the newest release. 
