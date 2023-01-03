@@ -17,7 +17,7 @@ sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/
 
 3. When prompted, enter your ETH address and authorization token.
 
-4. Once completed, `CTRL+C` to exit the installer.
+4. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
 
 5. To check that your transcoder is working correctly, tail the logs by running this command: 
 ```
