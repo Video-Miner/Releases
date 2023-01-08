@@ -9,17 +9,23 @@ wget https://raw.githubusercontent.com/keylase/nvidia-patch/master/patch.sh
 chmod a+x ./patch.sh
 ./patch.sh
 ```
-2. Begin the Video Miner installation:
+2. Make sure you have the correct dependencies installed:
+```
+apt install jq
+apt install unzip
+apt install curl
+```
+3. Begin the Video Miner installation:
 ```
 sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/Releases/releases/latest | grep browser_download_url | grep \"/install_videominer.sh\" | cut -d '\"' -f 4`)" root
 ```
 **Disclaimer:** The above command will automatically run the install script. You can find the script [here](<https://github.com/Video-Miner/Releases/releases/latest>) if you prefer to run it manually. 
 
-3. When prompted, enter your ETH address and authorization token.
+4. When prompted, enter your ETH address and authorization token.
 
-4. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
+5. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
 
-5. To check that your transcoder is working correctly, tail the logs by running this command: 
+6. To check that your transcoder is working correctly, tail the logs by running this command: 
 ```
 journalctl -u videominer -n 500 -f
 ```
