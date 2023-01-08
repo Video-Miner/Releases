@@ -61,4 +61,4 @@ https://discord.gg/bmtfrh9Vx6
 
 1. Click the ```Stop Video Miner Pool``` shortcut in the start menu.
 
-2. Run VideoMiner.msi as Admin and install Video Miner. This will download the newest release. 
+2. Run VideoMiner.msi as Admin and install Video Miner. This will download the newest release. If asked to uninstall first, follow the steps to do so and run the installer again to reinstall Video Miner with the latest version. 
