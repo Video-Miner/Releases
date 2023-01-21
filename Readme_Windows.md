@@ -65,8 +65,9 @@ https://discord.gg/bmtfrh9Vx6
 
 #  MANUALLY SELECTING A REGION
 
-If you find that your transcoder is being connected to an incorrect region, you can select a different one by adding a flag to the transcoder config. 
-**DISCLAIMER:** Always be careful editing your transcoder config, as adding an incorrect flag or removing neccessary flags can break things.
+If you find that your transcoder is being connected to an incorrect region, you can select a different one by adding a flag to the transcoder config.
+
+**DISCLAIMER:** Always be careful editing your transcoder config, as adding an incorrect flag or removing neccessary flags can break your transcoder.
 
 1. Open the Registry Editor by typing Registry Editor in the Windows search box.
  
