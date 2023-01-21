@@ -56,3 +56,34 @@ journalctl -u videominer -n 500 -f
 ```
 sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/Releases/releases/latest | grep browser_download_url | grep \"/uninstall_videominer.sh\" | cut -d '\"' -f 4`)" root
 ```
+
+#  MANUALLY SELECTING A REGION
+
+If you find that your transcoder is being connected to an incorrect region, you can select a different one by adding a flag to the transcoder config.
+
+**DISCLAIMER:** Always be careful editing your transcoder config, as adding an incorrect flag or removing neccessary flags can break your transcoder.
+
+1. Edit ```videominer.service```:
+```
+nano /etc/systemd/system/videominer.service
+```
+
+2. Append one of the following to the end of the “ExecStart” line (make sure to add a space before adding the flag).
+
+```
+-orchAddr=Orch-us-east.video-miner.xyz
+-orchAddr=Orch-us-west.video-miner.xyz
+-orchAddr=Orch-eu-central.video-miner.xyz
+```
+3. Save and close ```videominer.sevice```
+
+4. Reload systemd manager configuration:
+```
+systemctl daemon-reload
+```
+
+5. Restart ```videominer.service``` for changes to take effect:
+```
+systemctl restart videominer.service
+```
+
