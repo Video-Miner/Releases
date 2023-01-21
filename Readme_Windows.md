@@ -62,3 +62,27 @@ https://discord.gg/bmtfrh9Vx6
 1. Click the ```Stop Video Miner Pool``` shortcut in the start menu.
 
 2. Run VideoMiner.msi as Admin and install Video Miner. This will download the newest release. If asked to uninstall first, follow the steps to do so and run the installer again to reinstall Video Miner with the latest version. 
+
+#  MANUALLY SELECTING A REGION
+
+If you find that your transcoder is being connected to an incorrect region, you can select a different one by adding a flag to the transcoder config. 
+**DISCLAIMER:** Always be careful editing your transcoder config, as adding an incorrect flag or removing neccessary flags can break things.
+
+1. Open the Registry Editor by typing Registry Editor in the Windows search box.
+ 
+2. Paste the following into the navigation bar in the Editor:
+```
+Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\videominerSvc\Parameters
+```
+3. Right click on “App Parameters” and choose “Modify” from the pop up menu.
+
+5. Append one of the following to the “Value Data” field (make sure to add a space before adding the flag).
+
+```
+-orchAddr=Orch-us-east.video-miner.xyz
+-orchAddr=Orch-us-west.video-miner.xyz
+-orchAddr=Orch-eu-central.video-miner.xyz
+```
+6. Click “OK”
+
+7. Stop and restart the service using the shortcuts in the Video Miner directory (or start menu) for changes to take effect.
