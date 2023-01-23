@@ -95,7 +95,7 @@ If you would like to allocate a specific GPU to Video Miner, you can do so by ad
 nano /etc/systemd/system/videominer.service
 ```
 
-2. Append one the following to the end of the “ExecStart” line (make sure to add a space before adding the flag).
+2. Append the following to the end of the “ExecStart” line (make sure to add a space before adding the flag).
 ```
 -nvidia <id>
 ```
