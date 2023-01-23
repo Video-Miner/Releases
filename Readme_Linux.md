@@ -86,4 +86,20 @@ systemctl daemon-reload
 ```
 systemctl restart videominer.service
 ```
+#  MANUALLY SELECTING A GPU
 
+If you would like to allocate a specific GPU to Video Miner, you can do so by adding another flag to the transcoder config.
+
+1. Edit ```videominer.service```:
+```
+nano /etc/systemd/system/videominer.service
+```
+
+2. Append one the following to the end of the “ExecStart” line (make sure to add a space before adding the flag).
+```
+-nvidia <id>
+```
+
+3. To find the ID of your GPU's, in a new terminal type ```nvidia-smi```.
+
+The correct syntax for the flag is ```-nvidia 0```, or ```-nvidia 1```, depending on the GPU you'd like to use. You can also specify multiple GPU's with ```-nvidia 0,1,2```.
