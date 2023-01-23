@@ -100,9 +100,10 @@ nano /etc/systemd/system/videominer.service
 -nvidia <id>
 ```
 
+The correct syntax for the flag is ```-nvidia 0```, or ```-nvidia 1```, depending on the GPU you'd like to use. You can also specify multiple GPU's with ```-nvidia 0,1,2```.
+
 3. To find the ID of your GPU's, in a new terminal type ```nvidia-smi```.
 
-The correct syntax for the flag is ```-nvidia 0```, or ```-nvidia 1```, depending on the GPU you'd like to use. You can also specify multiple GPU's with ```-nvidia 0,1,2```.
 
 4. Save and close ```videominer.sevice```
 
