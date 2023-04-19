@@ -25,7 +25,7 @@ sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/
     * 4a. Enter the ETH address you want payments sent to.
     * 4b. Enter your authentication Token (If you don’t have a token reach out to us on Discord or Email).
     * 4c. Enter the ID of the GPU(s) you'd like to allocate to the pool. Click GPU Help to find your GPU ID.
-    * 4d. Select your desired stream capacity (up to 10) from the dropdown.
+    * 4d. Input your desired stream capacity (up to 10).
 
 5. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
 
