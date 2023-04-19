@@ -14,8 +14,10 @@
 5. To accept the default installation directory click Next.
 
 6. Enter your details. Please make sure these are correct.
-    * 6a. Enter the ETH address you want payments sent to
-    * 6b. Authentication Token (If you don’t have a token reach out to us on Discord or Email)
+    * 6a. Enter the ETH address you want payments sent to.
+    * 6b. Enter your authentication Token (If you don’t have a token reach out to us on Discord or Email).
+    * 6c. Enter the ID of the GPU(s) you'd like to allocate to the pool. Click GPU Help to find your GPU ID.
+    * 6d. Select your desired stream capacity (up to 10) from the dropdown.
 
 7. Click Next. 
 
