@@ -21,7 +21,11 @@ sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/
 ```
 **Disclaimer:** The above command will automatically run the install script. You can find the script [here](<https://github.com/Video-Miner/Releases/releases/latest>) if you prefer to run it manually. 
 
-4. When prompted, enter your ETH address and authorization token.
+4. Follow the prompts:
+    * 4a. Enter the ETH address you want payments sent to.
+    * 4b. Enter your authentication Token (If you don’t have a token reach out to us on Discord or Email).
+    * 4c. Enter the ID of the GPU(s) you'd like to allocate to the pool. Click GPU Help to find your GPU ID.
+    * 4d. Select your desired stream capacity (up to 10) from the dropdown.
 
 5. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
 
@@ -88,7 +92,7 @@ systemctl restart videominer.service
 ```
 #  MANUALLY SELECTING A GPU
 
-If you would like to allocate a specific GPU to Video Miner, you can do so by adding another flag to the transcoder config.
+If you would like to allocate a specific GPU to Video Miner without having to re-run the install script, you can do so by adding another flag to the transcoder config.
 
 1. Edit ```videominer.service```:
 ```
