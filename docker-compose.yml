@@ -1,0 +1,27 @@
+version: "3.8"
+
+name: video-miner
+
+services:
+  video-miner-pool:
+    build: .
+    image: video-miner-pool
+    container_name: video-miner-pool
+    restart: unless-stopped
+    runtime: nvidia
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro" # Set timezone to host timezone.
+      - "/etc/localtime:/etc/localtime:ro" # Set time to host time.
+    command:
+      [
+        "-ethAcctAddr",
+        "<ETH_ADDRESS>",
+        "-orchSecret",
+        "<ORCH_SECRET>",
+        "-maxSessions",
+        "<MAX_SESSIONS>",
+      ]
+
+networks:
+  default:
+    name: video_miner_pool

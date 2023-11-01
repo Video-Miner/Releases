@@ -1,9 +1,9 @@
 
-# INSTALLING 
+# INSTALLING
 
 **Note:** If not running as root use ```sudo``` to run commands with elevated permissions.
 
-1. Patch your Nvidia GPU(s) to enable transcoding:  
+1. Patch your Nvidia GPU(s) to enable transcoding:
 ```
 wget https://raw.githubusercontent.com/keylase/nvidia-patch/master/patch.sh
 chmod a+x ./patch.sh
@@ -19,7 +19,7 @@ apt install curl
 ```
 sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/Releases/releases/latest | grep browser_download_url | grep \"/install_videominer.sh\" | cut -d '\"' -f 4`)" root
 ```
-**Disclaimer:** The above command will automatically run the install script. You can find the script [here](<https://github.com/Video-Miner/Releases/releases/latest>) if you prefer to run it manually. 
+**Disclaimer:** The above command will automatically run the install script. You can find the script [here](<https://github.com/Video-Miner/Releases/releases/latest>) if you prefer to run it manually.
 
 4. Follow the prompts:
     * 4a. Enter the ETH address you want payments sent to.
@@ -29,7 +29,7 @@ sudo su -c "bash <(curl -fsSL `curl -s https://api.github.com/repos/Video-Miner/
 
 5. Once completed, `CTRL+C` to exit the installer. Make sure you see the status of the service before exiting to avoid closing during the installation process.
 
-6. To check that your transcoder is working correctly, tail the logs by running this command: 
+6. To check that your transcoder is working correctly, tail the logs by running this command:
 ```
 journalctl -u videominer -n 500 -f
 ```
@@ -42,7 +42,7 @@ https://discord.gg/bmtfrh9Vx6
 
 
 
-#  UPDATING TO A NEW RELEASE         
+#  UPDATING TO A NEW RELEASE
 
 
 1. To modify or update Video Miner, run the same command listed above and navigate through the prompts:
@@ -120,3 +120,32 @@ systemctl daemon-reload
 ```
 systemctl restart videominer.service
 ```
+
+# Containerized Operation (Experimental)
+
+Within this repository, you'll discover a [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml) file, offering a method to encapsulate the video-miner pool within a Docker container. It's essential to note that this configuration is still in the experimental phase and isn't recommended for production environments. Should you choose to embark on this journey, adhere to the following guidelines:
+
+1. **Docker Deployment**: Commence by installing Docker on your Linux machine. For guidance, refer to the [official Docker installation documentation](https://docs.docker.com/engine/install/ubuntu/).
+
+2. **Nvidia Container Toolkit Integration**: Ensure your system is fortified with the [Nvidia container toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
+
+3. **Image Construction**: Execute the subsequent command to construct the Docker image:
+
+```bash
+docker build -t video-miner-pool .
+```
+
+4. **Container Launch**: Initiate the container using the following command. Remember to substitute `<ETH_ADDRESS>` with your Ethereum address, `<NICKNAME>` with your designated identifier and `<MAX_SESSIONS>` with your desired session count:
+
+```bash
+docker run --runtime nvidia video-miner-pool -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions <MAX_SESSIONS>
+```
+
+ > \[!NOTE]
+ > If a discreet background operation suits your preferences, orchestrate it via Docker Compose:
+>
+>```bash
+>docker compose up -d
+>```
+>
+> During this process, update the [docker-compose.yml](docker-compose.yml) file with your precise ETH address, orchestrator secret and max sessions count.
