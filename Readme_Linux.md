@@ -123,29 +123,23 @@ systemctl restart videominer.service
 
 # Containerized Operation (Experimental)
 
-Within this repository, you'll discover a [Dockerfile](Dockerfile) and [docker-compose.yml](docker-compose.yml) file, offering a method to encapsulate the video-miner pool within a Docker container. It's essential to note that this configuration is still in the experimental phase and isn't recommended for production environments. Should you choose to embark on this journey, adhere to the following guidelines:
+VideoMiner is also available as a Docker image. For this you will need to:
 
-1. **Docker Deployment**: Commence by installing Docker on your Linux machine. For guidance, refer to the [official Docker installation documentation](https://docs.docker.com/engine/install/ubuntu/).
+1. **Docker Deployment**: Start off by installing Docker on your Linux machine. For guidance, refer to the [official Docker installation documentation](https://docs.docker.com/engine/install/ubuntu/).
 
-2. **Nvidia Container Toolkit Integration**: Ensure your system is fortified with the [Nvidia container toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
+2. **Nvidia Container Toolkit Integration**: Ensure your system has the [Nvidia container toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) installed.
 
-3. **Image Construction**: Execute the subsequent command to construct the Docker image:
-
-```bash
-docker build -t video-miner-pool .
-```
-
-4. **Container Launch**: Initiate the container using the following command. Remember to substitute `<ETH_ADDRESS>` with your Ethereum address, `<NICKNAME>` with your designated identifier and `<MAX_SESSIONS>` with your desired session count:
+3. **Container Launch**: Initiate the container using the following command. Remember to substitute `<ETH_ADDRESS>` with your Ethereum address and `<ORCH_SECRET>` with your designated key:
 
 ```bash
-docker run --runtime nvidia video-miner-pool -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions <MAX_SESSIONS>
+docker run --runtime nvidia lgdlivepool/transcoder -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions 10
 ```
 
  > \[!NOTE]
- > If a discreet background operation suits your preferences, orchestrate it via Docker Compose:
+ > To automatically run the Docker image in the background, copy the `docker-compose.yml file and then run it with:
 >
 >```bash
 >docker compose up -d
 >```
 >
-> During this process, update the [docker-compose.yml](docker-compose.yml) file with your precise ETH address, orchestrator secret and max sessions count.
+> Make sure do modify the contents of the [docker-compose.yml](docker-compose.yml) file with your own ETH address, orchestrator secret and max sessions count.
