@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     tar \
     psmisc \
+    curl \
     jq \
     && rm -rf /var/lib/apt/lists/*
 
