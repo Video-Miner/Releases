@@ -23,7 +23,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            lgdlivepool/transcoder
+            videominer/transcoder
           tags: |
             type=raw,value=latest
             type=raw,value=${{ env.VTAG }}

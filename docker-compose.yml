@@ -4,7 +4,7 @@ name: video-miner
 
 services:
   video-miner-pool:
-    image: lgdlivepool/transcoder
+    image: videominer/transcoder
     container_name: video-miner-pool
     restart: unless-stopped
     runtime: nvidia
