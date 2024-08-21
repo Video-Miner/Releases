@@ -132,7 +132,7 @@ VideoMiner is also available as a Docker image. For this you will need to:
 3. **Container Launch**: Initiate the container using the following command. Remember to substitute `<ETH_ADDRESS>` with your Ethereum address and `<ORCH_SECRET>` with your designated key:
 
 ```bash
-docker run --runtime nvidia lgdlivepool/transcoder -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions 10
+docker run --runtime nvidia videominer/transcoder -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions 10
 ```
 
  > \[!NOTE]
