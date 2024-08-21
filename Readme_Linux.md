@@ -1,3 +1,10 @@
+# PREREQUISITES
+
+## Before installing Video Miner, your system must have the following:
+
+**CUDA:** Find your OS [here](https://developer.nvidia.com/cuda-downloads) and follow the steps.
+
+**Supported Nvidia Drivers:** Make sure your Nvidia drivers are on [this](https://github.com/keylase/nvidia-patch) list.
 
 # INSTALLING
 
