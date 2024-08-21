@@ -128,7 +128,7 @@ systemctl daemon-reload
 systemctl restart videominer.service
 ```
 
-# Containerized Operation (Experimental)
+# Containerized Operation
 
 VideoMiner is also available as a Docker image. For this you will need to:
 
@@ -142,6 +142,11 @@ VideoMiner is also available as a Docker image. For this you will need to:
 docker run --runtime nvidia videominer/transcoder -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions 10
 ```
 
+If you are using a new version of docker, there is a new method of allowing access to GPU's. Please run as:
+```bash
+docker run --gpus=all videominer/transcoder -ethAcctAddr <ETH_ADDRESS> -orchSecret <ORCH_SECRET> -maxSessions 10
+```
+
  > \[!NOTE]
  > To automatically run the Docker image in the background, copy the `docker-compose.yml file and then run it with:
 >
@@ -150,3 +155,14 @@ docker run --runtime nvidia videominer/transcoder -ethAcctAddr <ETH_ADDRESS> -or
 >```
 >
 > Make sure do modify the contents of the [docker-compose.yml](docker-compose.yml) file with your own ETH address, orchestrator secret and max sessions count.
+
+If you are using a new version of docker and want to use `docker-compose`, there is a new method of allowing access to GPU's. Please modify the `docker-compose.yml` file and replace `runtime: nvidia` with:
+```
+deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+```
